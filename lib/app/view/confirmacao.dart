@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../my_app.dart';
+
 class Confirmacao extends StatefulWidget {
   const Confirmacao({ Key? key }) : super(key: key);
 
@@ -12,7 +14,18 @@ class _ConfirmacaoState extends State<Confirmacao> {
   Widget build(BuildContext context) {
     return Scaffold(
 
-      body: Center(
+      body: 
+      
+      Container(
+
+        decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("../imagem/background.jpg"),
+                fit: BoxFit.cover,
+              ),
+            ),
+
+        child: Center(
 
         child: Column(
 
@@ -40,12 +53,30 @@ class _ConfirmacaoState extends State<Confirmacao> {
 
             """),
 
-            TextButton(onPressed: () { Navigator.of(context).pushNamed("/"); }, child: Text("Voltar pra pagina inicial"))
+            Container(
+
+              padding: EdgeInsets.only(right: 10, left: 10),
+
+              decoration: BoxDecoration(color: Colors.amber ,borderRadius: BorderRadius.all(Radius.circular(4))),
+
+              child: TextButton.icon(
+
+              onPressed: () =>  Navigator.of(context).pushNamed(MyApp.HOME),
+
+              icon:(Icon(Icons.backpack, color: Colors.white,)), 
+            
+              label: Text("Verificar Lista", style: TextStyle(color: Colors.white)),
+            
+            ),
+
+            ),
 
           ]
         )
       
       )
+
+      ),
       
     );
   }

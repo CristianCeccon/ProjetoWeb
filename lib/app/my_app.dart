@@ -3,6 +3,8 @@ import 'package:receita_crud/app/view/cadastro.dart';
 import 'package:receita_crud/app/view/confirmacao.dart';
 import 'package:receita_crud/app/view/receita_details.dart';
 import 'package:receita_crud/app/view/receita_form.dart';
+import 'package:receita_crud/app/view/categoria.dart';
+import 'package:receita_crud/app/view/receita_list.dart';
 
 import 'view/my_home_page.dart';
 
@@ -11,6 +13,9 @@ class MyApp extends StatelessWidget {
   static const FORMULARIO_RECEITA = 'Receita-Formulario';
   static const CONFIRMACAO = 'Confirmacao';
   static const DETALHES_RECEITA = 'Receita-Details';
+  static const CATEGORIA_RECEITA = 'Categoria';
+  static const LISTA_RECEITA = 'Lista';
+
   // ignore: non_constant_identifier_names
 
   // This widget is the root of your application.
@@ -32,7 +37,7 @@ class MyApp extends StatelessWidget {
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
         colorScheme: ColorScheme.highContrastDark(),
-        primaryColor: Colors.indigo
+        primaryColor: Colors.amber
         //colorScheme: ColorScheme.dark()
         
 
@@ -42,6 +47,8 @@ class MyApp extends StatelessWidget {
         FORMULARIO_RECEITA:(context) => ReceitaForm(),
         CONFIRMACAO:(context) => Confirmacao(),
         DETALHES_RECEITA:(context) => ReceitaDetails(),
+        CATEGORIA_RECEITA:(context) => Categoria(),
+        LISTA_RECEITA:(context) => ReceitaList(),
       },
     );
   }

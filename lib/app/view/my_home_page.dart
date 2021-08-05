@@ -18,19 +18,30 @@ class _MyHomePageState extends State<MyHomePage> {
 
       appBar: AppBar(
 
-        title: Text("Receitas"),
+        title: Text("Receitas", style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600, fontFamily: 'Gotham-SSm'),),
 
       ),
 
       body:
 
-      Column(
+      Container(
+
+        decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("../imagem/background.jpg"),
+                fit: BoxFit.cover,
+              ),
+            ),
+
+
+        child: Column(
+        
 
         children: [
 
           CarouselSlider(
             options: CarouselOptions(height: 400.0),
-            items: ['../imagem/ImagemComida1.jpg','../imagem/ImagemComida2.png','../imagem/ImagemComida3.jpg','../imagem/ImagemComida4.jpg'].map((i) {
+            items: ['../imagem/Home2.png'].map((i) {
               return Builder(
                 builder: (BuildContext context) {
                   return Container(
@@ -52,13 +63,40 @@ class _MyHomePageState extends State<MyHomePage> {
 
           Center(
 
-            child: TextButton(onPressed: () =>  Navigator.of(context).pushNamed(MyApp.FORMULARIO_RECEITA) , child: Text("Cadastrar Receitas"))
+            child: Container(
+
+            padding: EdgeInsets.only(right: 10, left: 10),
+
+            decoration: BoxDecoration(color: Colors.amber ,borderRadius: BorderRadius.all(Radius.circular(4))),
+
+            child: TextButton(onPressed: () =>  Navigator.of(context).pushNamed(MyApp.FORMULARIO_RECEITA) , child: Text("Cadastrar Receitas", style: TextStyle(color: Colors.white)))
+            
+            ),
 
           ),
 
+          
+
+          SizedBox(
+            height: 15,
+          ),
+
+          Container(
+
+            padding: EdgeInsets.only(right: 10, left: 10),
+
+            decoration: BoxDecoration(color: Colors.amber ,borderRadius: BorderRadius.all(Radius.circular(4))),
+
+            child: TextButton(onPressed: () =>  Navigator.of(context).pushNamed(MyApp.CATEGORIA_RECEITA) , child: Text("Categoria Receitas", style: TextStyle(color: Colors.white))),
+          )
+
         ],
 
-      ) 
+      )
+
+      ),
+
+       
       
      
 

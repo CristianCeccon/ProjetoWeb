@@ -83,9 +83,18 @@ class ReceitaForm extends StatelessWidget {
 
       ),
 
-      body: 
+      body:
 
-      Column(
+      Container(
+
+        decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("../imagem/background.jpg"),
+                fit: BoxFit.cover,
+              ),
+            ),
+
+        child: Column(
 
         children: [
 
@@ -116,16 +125,24 @@ class ReceitaForm extends StatelessWidget {
           SizedBox(
             height: 50,
           ),
-          
 
-          TextButton.icon(
+
+          Container(
+
+            padding: EdgeInsets.only(right: 10, left: 10),
+
+            decoration: BoxDecoration(color: Colors.amber ,borderRadius: BorderRadius.all(Radius.circular(4))),
+
+            child: TextButton.icon(
 
             onPressed: () =>  Navigator.of(context).pushNamed(MyApp.CONFIRMACAO),
-             
 
-            icon:(Icon(Icons.save)), 
+            icon:(Icon(Icons.save, color: Colors.white)), 
             
-            label: Text("Confirmar Cadastro"),
+            label: Text("Confirmar Cadastro", style: TextStyle(color: Colors.white)),
+
+          ),
+
 
           ),
 
@@ -133,6 +150,10 @@ class ReceitaForm extends StatelessWidget {
         ],
 
       )
+
+      ), 
+
+      
       
       
       
